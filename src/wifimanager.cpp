@@ -10,8 +10,8 @@ char* soft_ap_password = NULL;
 
 char soft_ap_ssid[30]
 
-int rssiToBars(int rssi) {
-    if (rssi >= -50) {
+int get_rssi_strength_bars() {
+     if (WiFi.RSSI() >= -50) {
         return 4;
     } else if (rssi >= -60) {
         return 3;
@@ -22,10 +22,6 @@ int rssiToBars(int rssi) {
     } else {
         return 0;
     }
-}
-
-int get_rssi_strength_bars() {
-    return rssiToBars(WiFi.RSSI());
 }
 
 String get_mac() {
