@@ -1,0 +1,21 @@
+{
+  "name": "Enerinno_ENN_WIFI",
+  "keywords": "ESP32, ENN_WIFI",
+  "description": "Esentials for ENN_WIFI",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/MauroDuque/ENN_WIFI.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Mauricio Duque",
+      "email": "mauricio.duque.eje@gmail.com",
+      "maintainer": true
+    }
+  ],
+  "version": "0.0.1",
+  "frameworks": "arduino",
+  "platforms": "espressif"
+}
