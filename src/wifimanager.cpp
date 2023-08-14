@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "WiFi.h"
 
 const char *ssid_default = "Enerinno";
@@ -8,16 +9,6 @@ const char *ssid_mac = stringmac;
 char* soft_ap_password = NULL;
 
 char soft_ap_ssid[30]
-int bars_rssi = 0;
-int rssi = 0;
-
-int get_rssi_strength() {
-    return rssi;
-}
-
-int get_rssi_strength_bars() {
-    return bars_rssi;
-}
 
 int rssiToBars(int rssi) {
     if (rssi >= -50) {
@@ -33,14 +24,8 @@ int rssiToBars(int rssi) {
     }
 }
 
-void rssi_loop() {
-    rssi = WiFi.RSSI();  // Get RSSI value in dBm
-    bars_rssi = rssiToBars(rssi);
-
-    Serial.print("RSSI: ");
-    Serial.print(rssi);
-    Serial.print(" dBm, Bars: ");
-    Serial.println(bars_rssi);
+int get_rssi_strength_bars() {
+    return rssiToBars(WiFi.RSSI());
 }
 
 String get_mac() {
