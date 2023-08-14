@@ -14,7 +14,8 @@ String get_mac() {
     return macaddress;
 }
 
-void wifi_connection() {
+void wifi_connection(const char* ssid, const char* password) {
+    char soft_ap_ssid[64]; // Adjust the array size as needed
     strcpy(soft_ap_ssid, ssid_default);
     strcat(soft_ap_ssid, ssid_mac);
 
@@ -25,8 +26,7 @@ void wifi_connection() {
     Serial.print("Access Point IP address: ");
     Serial.println(WiFi.softAPIP()); // Print the IP address of the Access Point
 
-    
-    WiFi.begin(get_SSID().c_str(), get_password().c_str());
+    WiFi.begin(ssid, password);
 
     Serial.println("NetWork: ");
     Serial.println(soft_ap_ssid);
