@@ -1,5 +1,4 @@
 #include "WiFi.h"
-#include "settings.h"
 
 const char *ssid_default = "Enerinno";
 
@@ -40,8 +39,4 @@ bool is_internet() {
     Serial.println(WiFi.localIP());
 
     return true;
-}
-
-void wifi_setup() {
-    wifi_connection();
 }
