@@ -10,20 +10,6 @@ char* soft_ap_password = NULL;
 
 char soft_ap_ssid[30]
 
-int get_rssi_strength_bars() {
-     if (WiFi.RSSI() >= -50) {
-        return 4;
-    } else if (rssi >= -60) {
-        return 3;
-    } else if (rssi >= -70) {
-        return 2;
-    } else if (rssi >= -80) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
 String get_mac() {
     return macaddress;
 }
@@ -54,4 +40,18 @@ bool is_internet() {
     Serial.println(WiFi.localIP());
 
     return true;
+}
+
+int get_rssi_strength_bars() {
+     if (WiFi.RSSI() >= -50) {
+        return 4;
+    } else if (rssi >= -60) {
+        return 3;
+    } else if (rssi >= -70) {
+        return 2;
+    } else if (rssi >= -80) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
