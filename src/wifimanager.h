@@ -9,5 +9,5 @@ void wifi_connection(const char* ssid, const char* password);
 bool is_internet();
 int get_rssi_strength_bars();
 void setWiFiSleep(bool enableSleep);
-void changeWiFiMode(wifi_mode_t mode);
+void changeWiFiMode(int modeSelection);
 #endif // WIFI_MANAGER_H
