@@ -2,6 +2,7 @@
 #define WIFI_MANAGER_H
 
 #include <Arduino.h>
+#include <WiFi.h>
 
 String get_mac_address();
 void wifi_connection(const char* ssid, const char* password);
