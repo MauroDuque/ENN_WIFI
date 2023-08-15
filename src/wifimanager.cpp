@@ -8,30 +8,17 @@ String get_mac_address() {
 }
 
 // Function to change WiFi mode
-// TODO
-// void setWiFiMode(int modeSelection) {
-//     switch (modeSelection) {
-//         case 1:
-//             WiFi.mode(WIFI_STA);
-//             break;
-//         case 2:
-//             WiFi.mode(WIFI_AP);
-//             break;
-//         case 3:
-//             WiFi.mode(WIFI_AP_STA);
-//             break;
-//         // Add more cases for different WiFi modes if needed
-//         default:
-//             WiFi.mode(WIFI_STA); // Default mode
-//     }
-// }
+
+void changeWiFiMode(wifi_mode_t mode) {
+    WiFi.mode(mode);
+}
 // Function to control WiFi sleep mode
 void setWiFiSleep(bool enableSleep) {
     WiFi.setSleep(enableSleep);
 }
 
 void wifi_connection(const char* ssid, const char* password) {
-    changeWiFiMode.mode(WIFI_AP_STA);
+    changeWiFiMode(WIFI_AP_STA);
 
     String soft_ap_ssid = String(ssid_default) + WiFi.macAddress();
     WiFi.softAP(soft_ap_ssid.c_str(), soft_ap_password);
