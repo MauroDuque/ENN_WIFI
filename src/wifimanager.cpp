@@ -9,22 +9,22 @@ String get_mac_address() {
 
 // Function to change WiFi mode
 // TODO
-void setWiFiMode(int modeSelection) {
-    switch (modeSelection) {
-        case 1:
-            WiFi.mode(WIFI_STA);
-            break;
-        case 2:
-            WiFi.mode(WIFI_AP);
-            break;
-        case 3:
-            WiFi.mode(WIFI_AP_STA);
-            break;
-        // Add more cases for different WiFi modes if needed
-        default:
-            WiFi.mode(WIFI_STA); // Default mode
-    }
-}
+// void setWiFiMode(int modeSelection) {
+//     switch (modeSelection) {
+//         case 1:
+//             WiFi.mode(WIFI_STA);
+//             break;
+//         case 2:
+//             WiFi.mode(WIFI_AP);
+//             break;
+//         case 3:
+//             WiFi.mode(WIFI_AP_STA);
+//             break;
+//         // Add more cases for different WiFi modes if needed
+//         default:
+//             WiFi.mode(WIFI_STA); // Default mode
+//     }
+// }
 // Function to control WiFi sleep mode
 void setWiFiSleep(bool enableSleep) {
     WiFi.setSleep(enableSleep);
