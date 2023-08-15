@@ -9,7 +9,7 @@ String get_mac_address() {
 
 // Function to change WiFi mode
 // TODO
-void changeWiFiMode(int modeSelection) {
+void setWiFiMode(int modeSelection) {
     switch (modeSelection) {
         case 1:
             WiFi.mode(WIFI_STA);
