@@ -3,12 +3,17 @@
 const char* ssid_default = "Enerinno";
 const char* soft_ap_password = NULL;
 
+struct NetworkInfo {
+  String ssid;
+  int strength;
+};
+
 String get_mac_address() {
     return WiFi.macAddress();
 }
 
 // ======================WIFI Scann =================================
-void get_networks() {
+NetworkInfo* get_networks() {
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
 
@@ -17,15 +22,20 @@ void get_networks() {
 
   if (networks == 0) {
     Serial.println("No WiFi networks found.");
+    return nullptr; // No networks found, return nullptr
   } else {
+    NetworkInfo* networkList = new NetworkInfo[networks];
+
     for (int i = 0; i < networks; ++i) {
-      Serial.print(i);
-      Serial.print(": ");
-      Serial.println(WiFi.SSID(i));
+      networkList[i].ssid = WiFi.SSID(i);
+      networkList[i].strength = WiFi.RSSI(i);
       delay(10);
     }
+
+    return networkList;
   }
 }
+
 
 // ======================WIFI=================================
 

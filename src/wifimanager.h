@@ -10,5 +10,5 @@ bool is_internet();
 int get_rssi_strength_bars();
 void setWiFiSleep(bool enableSleep);
 void changeWiFiMode(wifi_mode_t mode);
-void get_networks();
+NetworkInfo* get_networks();
 #endif // WIFI_MANAGER_H
