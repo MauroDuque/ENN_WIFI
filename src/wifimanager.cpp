@@ -7,6 +7,28 @@ String get_mac_address() {
     return WiFi.macAddress();
 }
 
+// ======================WIFI Scann =================================
+void get_networks() {
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+
+  Serial.println("Scanning for WiFi networks...");
+  int networks = WiFi.scanNetworks();
+
+  if (networks == 0) {
+    Serial.println("No WiFi networks found.");
+  } else {
+    for (int i = 0; i < networks; ++i) {
+      Serial.print(i);
+      Serial.print(": ");
+      Serial.println(WiFi.SSID(i));
+      delay(10);
+    }
+  }
+}
+
+// ======================WIFI=================================
+
 // Function to change WiFi mode
 
 void changeWiFiMode(wifi_mode_t mode) {
